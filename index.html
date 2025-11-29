@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UNRAVEL: The Story Behind What We Wear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="UNRAVEL is a sustainability campaign at NU-Q & Education City that rethinks fast fashion and reframes sustainable fashion as mindset, creativity, and community."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #f6f0e8;
+      --bg-deep: #102414;
+      --purple: #8240ff;
+      --purple-dark: #5f2cc3;
+      --accent: #ffe66d;
+      --card: #ffffff;
+      --text-main: #171717;
+      --text-muted: #555;
+      --border-soft: #e0d5c6;
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 20px 72px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(246, 240, 232, 0.96),
+        rgba(246, 240, 232, 0.85),
+        transparent
+      );
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0 4px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 0%, #ffe66d, #8240ff);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .logo-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--purple), var(--accent));
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-cta span {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .btn-pill {
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: #fff;
+      box-shadow: 0 10px 26px rgba(130, 64, 255, 0.35);
+    }
+
+    .btn-pill.secondary {
+      background: #fff;
+      color: var(--text-main);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .btn-pill span.icon {
+      font-size: 16px;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 32px 0 32px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-left {
+      position: relative;
+      padding-right: 10px;
+    }
+
+    .hero-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 4vw, 42px);
+      line-height: 1.05;
+      margin-bottom: 14px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(120deg, var(--purple), var(--purple-dark));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin-bottom: 18px;
+    }
+
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(130, 64, 255, 0.06);
+      font-size: 12px;
+      color: var(--purple-dark);
+      margin-bottom: 18px;
+    }
+
+    .hero-tagline span.badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 0%, var(--accent), var(--purple));
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-meta span dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--purple);
+    }
+
+    .hero-meta small {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 360px;
+      margin-left: auto;
+    }
+
+    .hero-quote-card {
+      background: var(--card);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-soft);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+      font-size: 13px;
+    }
+
+    .hero-quote-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-quote {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .hero-quote span {
+      color: var(--purple-dark);
+    }
+
+    .hero-quote-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hero-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .hero-badge {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.06);
+      background: rgba(255,255,255,0.9);
+    }
+
+    .hero-floating-small {
+      /* 不再绝对定位，改为正常流布局 */
+      position: static;
+      margin-top: 4px;
+      background: var(--bg-deep);
+      color: #fff;
+      border-radius: 16px;
+      padding: 10px 12px;
+      font-size: 11px;
+      box-shadow: 0 16px 30px rgba(0,0,0,0.22);
+    }
+
+    .hero-floating-small strong {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 10px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .hero-floating-small p {
+      margin-top: 4px;
+    }
+
+    /* IMPACT SNAPSHOT STRIP */
+
+    .impact-strip {
+      margin-top: 10px;
+      margin-bottom: 24px;
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at 10% 0%, #27593d, #07140b);
+      color: #fff;
+      padding: 18px 18px 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .impact-header {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 6px;
+    }
+
+    .impact-title {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .impact-text {
+      font-size: 12px;
+      color: rgba(255,255,255,0.86);
+      max-width: 420px;
+    }
+
+    .impact-tags {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .impact-tag {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(0,0,0,0.24);
+    }
+
+    .impact-right {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      gap: 10px;
+      font-size: 11px;
+    }
+
+    .impact-box {
+      border-radius: 14px;
+      padding: 10px 11px;
+      background: rgba(0,0,0,0.28);
+    }
+
+    .impact-box strong {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .impact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .impact-chip {
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.3);
+    }
+
+    .impact-footer-note {
+      font-size: 10px;
+      color: rgba(255,255,255,0.7);
+      margin-top: 6px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 24px 0 12px;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 22px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .section-subtitle {
+      max-width: 450px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 16px 18px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    .definition-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .definition-item {
+      display: flex;
+      gap: 10px;
+    }
+
+    .definition-label {
+      min-width: 60px;
+      font-weight: 600;
+      color: var(--purple-dark);
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+    }
+
+    .definition-value {
+      color: var(--text-main);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .kpi-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    .kpi-pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(130, 64, 255, 0.08);
+      color: var(--purple-dark);
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .kpi-pill span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--purple);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .kpi-columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      font-size: 12px;
+    }
+
+    .kpi-columns h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+
+    .kpi-columns ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .kpi-columns li::before {
+      content: "•";
+      margin-right: 6px;
+      color: var(--purple);
+    }
+
+    .swot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      font-size: 12px;
+    }
+
+    .swot-item h4 {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .swot-item ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .swot-item li::before {
+      content: "–";
+      margin-right: 6px;
+      color: var(--text-muted);
+    }
+
+    /* DATA */
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      font-size: 12px;
+    }
+
+    .data-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 14px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+    }
+
+    .data-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .data-value {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .data-footnote {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .bar-track {
+      position: relative;
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.06);
+      overflow: hidden;
+      margin: 8px 0 4px;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--purple), var(--accent));
+      width: 0;
+    }
+
+    /* ACTIVATIONS */
+
+    .activations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .activation-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 14px 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+    }
+
+    .activation-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+
+    .activation-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .activation-body {
+      font-size: 12px;
+      color: var(--text-main);
+    }
+
+    .activation-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .activation-cta {
+      margin-top: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--purple-dark);
+    }
+
+    /* MEDIA */
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .media-list {
+      font-size: 12px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4px 12px;
+    }
+
+    .media-list span::before {
+      content: "•";
+      margin-right: 6px;
+      color: var(--purple);
+    }
+
+    .media-why {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .influencer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      font-size: 12px;
+    }
+
+    .influencer-card {
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      background: #fff;
+      padding: 10px 12px;
+    }
+
+    .influencer-name {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .influencer-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .influencer-detail {
+      font-size: 11px;
+    }
+
+    /* CTA */
+
+    .cta-section {
+      background: var(--bg-deep);
+      border-radius: var(--radius-xl);
+      padding: 22px 20px;
+      color: #fff;
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+    }
+
+    .cta-title {
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .cta-subtitle {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.78);
+      margin-bottom: 14px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cta-actions .btn-pill {
+      box-shadow: 0 12px 30px rgba(0,0,0,0.32);
+    }
+
+    .cta-quicklist {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cta-quicklist span::before {
+      content: "↳";
+      margin-right: 4px;
+      color: var(--accent);
+    }
+
+    .cta-right {
+      font-size: 11px;
+      color: rgba(255,255,255,0.78);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 10px 12px;
+      background: rgba(0,0,0,0.25);
+    }
+
+    .cta-right h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 6px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .cta-hashtags {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .cta-hashtags span {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.24);
+    }
+
+    footer {
+      font-size: 11px;
+      color: var(--text-muted);
+      padding-top: 18px;
+      border-top: 1px solid rgba(0,0,0,0.04);
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    footer strong {
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .hero-right {
+        max-width: none;
+        margin-left: 0;
+      }
+      .impact-strip {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .kpi-grid,
+      .media-grid,
+      .cta-section {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    @media (max-width: 780px) {
+      .nav-links,
+      .nav-cta span {
+        display: none;
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .nav-links.is-open {
+        display: flex;
+        position: absolute;
+        top: 52px;
+        right: 20px;
+        flex-direction: column;
+        background: rgba(246, 240, 232, 0.98);
+        padding: 10px 16px;
+        border-radius: 14px;
+        box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+      }
+      .hero {
+        padding-top: 22px;
+      }
+      .grid-2 {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .kpi-columns {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .swot-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .data-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .activations-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .influencer-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <div class="logo-mark"></div>
+          <div class="logo-text">
+            <div class="logo-title">Unravel</div>
+            <div class="logo-sub">Environmental Sustainability Campaign</div>
+          </div>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">
+          ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#about">Overview</a>
+          <a href="#data">Insights</a>
+          <a href="#activations">Activations</a>
+          <a href="#media">Media</a>
+          <a href="#get-involved">Join</a>
+        </div>
+
+        <div class="nav-cta">
+          <span>NU-Q · EC · 2025</span>
+          <button class="btn-pill" onclick="scrollToId('get-involved')">
+            <span class="icon">✶</span> Wear Your Values
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-left">
+          <div class="hero-kicker">Fast fashion looks harmless… until you look closer.</div>
+          <h1 class="hero-title">
+            UNRAVEL:
+            <span class="hero-highlight">The Story Behind What We Wear</span>
+          </h1>
+          <p class="hero-subtitle">
+            A four-week sustainability campaign at NU-Q and Education City that reframes
+            fashion from mindless consumption into mindful expression, community, and care.
+          </p>
+
+          <div class="hero-tagline">
+            <span class="badge-dot"></span>
+            Not a price tag — a mindset.
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn-pill" onclick="scrollToId('get-involved')">
+              <span class="icon">➜</span> Join the Challenge
+            </button>
+            <button class="btn-pill secondary" onclick="scrollToId('about')">
+              Learn how the campaign works
+            </button>
+          </div>
+
+          <div class="hero-meta">
+            <span>
+              <dot></dot>
+              <small>Who</small> NU-Q & EC students (18–25)
+            </span>
+            <span>
+              <dot></dot>
+              <small>Goal</small> +40% awareness in 4 weeks
+            </span>
+            <span>
+              <dot></dot>
+              <small>Hashtags</small> #UnravelNUQ · #WearYourValues
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-quote-card">
+            <div class="hero-quote-label">Student mindset</div>
+            <div class="hero-quote">
+              “I know fast fashion is bad… but it’s <span>cheap, trendy, and always there</span> when I need an outfit.”
+            </div>
+            <div class="hero-quote-meta">
+              This is where Unravel intervenes — not by shaming students, but by offering creative, realistic alternatives.
+            </div>
+            <div class="hero-badge-row">
+              <span class="hero-badge">Awareness → Action</span>
+              <span class="hero-badge">From guilt → creativity</span>
+            </div>
+          </div>
+
+          <div class="hero-floating-small">
+            <strong>SMART objective</strong>
+            <p>
+              Raise awareness of sustainable fashion options among EC students by
+              <b>40% in 4 weeks</b>, measured via pre/post survey & engagement data.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMPACT SNAPSHOT STRIP -->
+      <section class="impact-strip">
+        <div>
+          <div class="impact-header">Impact Snapshot · 22 students in Qatar</div>
+          <div class="impact-title">They know fast fashion is harmful — but still feel stuck with it.</div>
+          <p class="impact-text">
+            Students recognize that fast fashion harms both people and the planet, yet rely on it because it feels like the
+            only option that is affordable, trendy, and easy. The “gap” isn’t knowledge — it’s access, price, and a feeling
+            that individual action doesn’t matter.
+          </p>
+          <div class="impact-tags">
+            <span class="impact-tag">77% aged 18–24</span>
+            <span class="impact-tag">100% women</span>
+            <span class="impact-tag">Qatar-based university students</span>
+          </div>
+        </div>
+
+        <div class="impact-right">
+          <div class="impact-box">
+            <strong>Why they still buy fast fashion</strong>
+            <p>
+              When choosing outfits, these reasons win over sustainability:
+            </p>
+            <div class="impact-chips">
+              <span class="impact-chip">33.2% affordability</span>
+              <span class="impact-chip">27.6% style variety</span>
+              <span class="impact-chip">25.4% convenience</span>
+            </div>
+            <div class="impact-footer-note">
+              “Cheap, trendy, and always available” beats out long-term impact in everyday decisions.
+            </div>
+          </div>
+
+          <div class="impact-box">
+            <strong>What holds them back from changing</strong>
+            <p>
+              Many see sustainable options as:
+            </p>
+            <div class="impact-chips">
+              <span class="impact-chip">too expensive</span>
+              <span class="impact-chip">hard to access in Qatar</span>
+              <span class="impact-chip">confusing to navigate</span>
+              <span class="impact-chip">“my action won’t matter”</span>
+            </div>
+            <div class="impact-footer-note">
+              Unravel responds with creativity, community, and clear campus-based options.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAMPAIGN OVERVIEW -->
+      <section id="about">
+        <div class="section-kicker">Campaign Overview</div>
+        <div class="section-header">
+          <h2 class="section-title">What Unravel Does</h2>
+          <p class="section-subtitle">
+            Students rely on fast fashion because it feels cheap, trendy, and easy.
+            Unravel challenges the belief that sustainability is a luxury, and reframes it
+            as creativity, culture, and community practice on campus.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3 class="card-title">The Basics</h3>
+            <div class="definition-list">
+              <div class="definition-item">
+                <div class="definition-label">What</div>
+                <div class="definition-value">
+                  A sustainability campaign rethinking fast fashion and the stories behind what we wear.
+                </div>
+              </div>
+              <div class="definition-item">
+                <div class="definition-label">Why</div>
+                <div class="definition-value">
+                  Because affordable ≠ responsible. Sustainability should not be framed as a privilege,
+                  but as an everyday practice open to all students.
+                </div>
+              </div>
+              <div class="definition-item">
+                <div class="definition-label">Who</div>
+                <div class="definition-value">
+                  NU-Q and Education City students, 18–25, fashion-curious, social-media savvy, and budget-conscious.
+                </div>
+              </div>
+              <div class="definition-item">
+                <div class="definition-label">Where</div>
+                <div class="definition-value">
+                  NU-Q campus, Education City spaces, Instagram & TikTok, and pop-up activations.
+                </div>
+              </div>
+              <div class="definition-item">
+                <div class="definition-label">When</div>
+                <div class="definition-value">A 4-week rollout during the academic semester.</div>
+              </div>
+              <div class="definition-item">
+                <div class="definition-label">How</div>
+                <div class="definition-value">
+                  Cinematic storytelling, hands-on workshops, creative re-styling challenges,
+                  and activations that turn awareness into action.
+                </div>
+              </div>
+            </div>
+
+            <div class="tag-row">
+              <span class="tag">Story-driven</span>
+              <span class="tag">Student-led</span>
+              <span class="tag">Qatar-specific</span>
+              <span class="tag">Environment & ethics</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Key Insight & Target Shift</h3>
+            <p style="font-size:13px; margin-bottom:8px;">
+              <strong>Key insight:</strong> Sustainability in fashion isn’t about
+              spending more – it’s about understanding the value behind what we wear.
+            </p>
+            <p style="font-size:13px; margin-bottom:10px;">
+              When students see clothing as both expression and responsibility, style becomes a statement
+              of awareness, not excess. Unravel moves students from “I can’t afford to care” to
+              “I can show who I am by how I care.”
+            </p>
+            <p style="font-size:13px;">
+              The campaign reframes sustainable fashion as:
+            </p>
+            <ul style="margin:8px 0 0 16px; font-size:13px;">
+              <li>Creative — upcycling, re-styling, gym wear re-design.</li>
+              <li>Cultural — connecting fashion with identity and local designers.</li>
+              <li>Community-based — swaps, workshops, and peer-to-peer inspiration.</li>
+            </ul>
+
+            <div class="kpi-row">
+              <div class="kpi-pill">
+                <span class="dot"></span> +40% awareness in 4 weeks
+              </div>
+              <div class="kpi-pill" style="background:rgba(0,0,0,0.04); color:var(--text-main);">
+                <span class="dot" style="background:var(--accent);"></span>
+                Success = mindset shift, not just clicks
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <section style="margin-top:22px;">
+          <div class="kpi-grid">
+            <article class="card">
+              <h3 class="card-title">KPIs & Tracking Plan</h3>
+              <div class="kpi-columns">
+                <div>
+                  <h4>Engagement</h4>
+                  <ul>
+                    <li>300+ engagements on Instagram posts.</li>
+                    <li>Participation in Creative Re-styling Challenge (#WearYourValues).</li>
+                    <li>Number of user-generated submissions & reels.</li>
+                    <li>Click-through rate to this landing page.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Activation</h4>
+                  <ul>
+                    <li>50+ attendees at “Thread of Identity” workshop.</li>
+                    <li>80+ participants in “Behind the Seams” exhibit.</li>
+                    <li>Number of tote bags & patches created.</li>
+                    <li>Submissions to Re•Runway sustainable fashion show.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Tracking</h4>
+                  <ul>
+                    <li>Pre/post awareness survey data.</li>
+                    <li>Social media insights & hashtag tracking.</li>
+                    <li>Landing page analytics.</li>
+                    <li>Event sign-ups & digital check-ins.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">SWOT Snapshot</h3>
+              <div class="swot-grid">
+                <div class="swot-item">
+                  <h4>Strength</h4>
+                  <ul>
+                    <li>Fashion-forward student culture.</li>
+                    <li>Strong digital presence & content creation skills.</li>
+                    <li>Students value individuality and self-expression.</li>
+                  </ul>
+                </div>
+                <div class="swot-item">
+                  <h4>Weakness</h4>
+                  <ul>
+                    <li>Sustainable fashion perceived as expensive or elitist.</li>
+                    <li>Fast fashion is normalized and socially rewarded.</li>
+                    <li>Limited access to local thrift or slow-fashion options.</li>
+                  </ul>
+                </div>
+                <div class="swot-item">
+                  <h4>Opportunity</h4>
+                  <ul>
+                    <li>Rising interest in workshops, DIY, and customization.</li>
+                    <li>Partnerships with local sustainable brands.</li>
+                    <li>Collaboration with VCUarts & M7 for craft-based activations.</li>
+                  </ul>
+                </div>
+                <div class="swot-item">
+                  <h4>Threat</h4>
+                  <ul>
+                    <li>“Green fatigue” — repetitive sustainability messaging.</li>
+                    <li>Risk of campaign being seen as moralistic or privileged.</li>
+                    <li>Students’ budget limitations and time pressure.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <!-- DATA -->
+      <section id="data">
+        <div class="section-kicker">Student Insights</div>
+        <div class="section-header">
+          <h2 class="section-title">What Our Survey Shows</h2>
+          <p class="section-subtitle">
+            A quick look into how students in Qatar think about fast fashion and sustainability —
+            and what’s stopping them from making more mindful choices today.
+          </p>
+        </div>
+
+        <div class="data-grid">
+          <div class="data-card" data-bar="77">
+            <div class="data-label">Who we asked</div>
+            <div class="data-value">77%</div>
+            <div class="data-footnote">
+              of respondents are aged 18–24, and 100% identify as women.
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill"></div>
+            </div>
+            <div class="data-footnote">
+              Sample: 22 university students in Qatar.
+            </div>
+          </div>
+
+          <div class="data-card" data-bar="33">
+            <div class="data-label">Why they buy fast fashion</div>
+            <div class="data-value">33.2%</div>
+            <div class="data-footnote">
+              buy mainly because it is affordable. Others cite style variety (27.6%) and convenience (25.4%).
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill"></div>
+            </div>
+            <div class="data-footnote">
+              Trendiness and peer influence also play a smaller role.
+            </div>
+          </div>
+
+          <div class="data-card" data-bar="80">
+            <div class="data-label">What would motivate change</div>
+            <div class="data-value">80%+</div>
+            <div class="data-footnote">
+              say affordable alternatives, creative re-styling ideas, and swap events would help them choose more
+              sustainable options.
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill"></div>
+            </div>
+            <div class="data-footnote">
+              Workshops and clear information on impact also rank high.
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px; font-size:12px; color:var(--text-muted); max-width:650px;">
+          <strong>Big barrier:</strong> Students feel sustainable fashion is
+          <em>too expensive, hard to access, and confusing</em>.
+          Many don’t know where to buy, or feel their individual action won’t make a difference.
+          Unravel responds by making sustainability visible, social, and fun on campus.
+        </div>
+      </section>
+
+      <!-- ACTIVATIONS -->
+      <section id="activations">
+        <div class="section-kicker">Experience the Campaign</div>
+        <div class="section-header">
+          <h2 class="section-title">Core Activations</h2>
+          <p class="section-subtitle">
+            Each activation translates the problem into a concrete experience — from redesigning your own gym top,
+            to walking a sustainable runway, to confronting the true cost of a 20 QAR outfit.
+          </p>
+        </div>
+
+        <div class="activations-grid">
+          <article class="activation-card">
+            <div class="activation-tag">Activation 1</div>
+            <h3 class="activation-title">ReDesign Lab — Gym Wear Edition</h3>
+            <p class="activation-body">
+              Students bring an old gym top, leggings, hoodie, or sportswear they no longer use and redesign it from scratch.
+              With guidance from designer Dana Alzian, they learn how sustainable fashion works in real life — not through a lecture,
+              but by transforming their own clothes.
+            </p>
+            <p class="activation-meta">
+              The session ends with a fun Pilates class to “test” the redesigned outfits and a branded photo corner for
+              Instagram-ready shots.
+            </p>
+            <div class="activation-cta">↳ Bring a piece · Leave with a new story</div>
+          </article>
+
+          <article class="activation-card">
+            <div class="activation-tag">Activation 2</div>
+            <h3 class="activation-title">Re•Runway — Sustainable Fashion Show</h3>
+            <p class="activation-body">
+              A runway that celebrates NU-Q and EC students who have ever created a sustainable piece.
+              If you have upcycled, reworked, or crafted something from reused materials — this is your stage.
+            </p>
+            <p class="activation-meta">
+              Featuring: upcycled clothing, repurposed garments, reworked gym wear, accessories from recycled textiles,
+              and senior project pieces with a sustainability focus.
+            </p>
+            <div class="activation-cta">↳ “If you ever created something sustainable, this is your stage.”</div>
+          </article>
+
+          <article class="activation-card">
+            <div class="activation-tag">Activation 3</div>
+            <h3 class="activation-title">“The 20 QAR Outfit — Would You Still Buy It?”</h3>
+            <p class="activation-body">
+              A hidden-camera style booth promises a full outfit for just 20 QAR. Before students can “buy” it, they watch a short video
+              revealing the real cost: garment worker conditions, underpayment, and environmental pollution.
+            </p>
+            <p class="activation-meta">
+              At the end, the screen asks: <em>“Knowing this, would you still buy it?”</em> Students choose to buy the outfit or
+              donate to a sustainable cause instead.
+            </p>
+            <div class="activation-cta">↳ Confront the real price of “cheap”</div>
+          </article>
+        </div>
+
+        <div style="margin-top:18px; font-size:12px; color:var(--text-muted); max-width:680px;">
+          Beyond the three main activations, Unravel also lives on campus screens, Instagram challenges
+          (like the <strong>#RewearChallenge</strong>: one item, three outfits, tag three friends),
+          and ongoing workshops such as “Thread of Identity” and “Behind the Seams”.
+        </div>
+      </section>
+
+      <!-- MEDIA -->
+      <section id="media">
+        <div class="section-kicker">Amplification</div>
+        <div class="section-header">
+          <h2 class="section-title">Media & Influencer Strategy</h2>
+          <p class="section-subtitle">
+            Unravel is designed to be highly visual, youth-led, and media-friendly — giving Qatar’s outlets and influencers a fresh,
+            hopeful story about sustainability and student creativity.
+          </p>
+        </div>
+
+        <div class="media-grid">
+          <article class="card">
+            <h3 class="card-title">Media Call — Who & Why</h3>
+            <p style="font-size:13px; margin-bottom:8px;">
+              We invite key Qatar-based outlets and platforms with strong youth audiences:
+            </p>
+            <div class="media-list">
+              <span>Doha News</span>
+              <span>The Peninsula</span>
+              <span>Gulf Times</span>
+              <span>Al Raya</span>
+              <span>Qatar Tribune</span>
+              <span>Al Sharq</span>
+              <span>Qatar TV (youth segment)</span>
+              <span>I Love Qatar</span>
+            </div>
+            <div class="media-why">
+              <strong>Why they should cover it:</strong>
+              <ul style="margin:6px 0 0 16px;">
+                <li>Strong youth and sustainability angle.</li>
+                <li>Positive Education City initiative and student leadership.</li>
+                <li>Unique visual storytelling: runway, redesign lab, and experimental “20 QAR outfit” booth.</li>
+                <li>Platform to highlight local young designers and creative talent.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Influencers — Faces of the Movement</h3>
+            <div class="influencer-grid">
+              <div class="influencer-card">
+                <div class="influencer-name">Reem Alsalem</div>
+                <div class="influencer-meta">349K followers · Strong presence & trust</div>
+                <div class="influencer-detail">
+                  Ideal for highlighting the Re•Runway show, behind-the-scenes content, and sustainability as aspirational, not elitist.
+                </div>
+              </div>
+              <div class="influencer-card">
+                <div class="influencer-name">Khoodiz</div>
+                <div class="influencer-meta">408K followers · High-end fashion tone</div>
+                <div class="influencer-detail">
+                  Brings runway-ready visuals and connects Unravel to local fashion conversations in Doha.
+                </div>
+              </div>
+              <div class="influencer-card">
+                <div class="influencer-name">Haneen Al Saify</div>
+                <div class="influencer-meta">1M followers · Strong Doha audience</div>
+                <div class="influencer-detail">
+                  Known for supporting local initiatives and youth projects, amplifying Unravel’s community aspect.
+                </div>
+              </div>
+              <div class="influencer-card">
+                <div class="influencer-name">Sanaz</div>
+                <div class="influencer-meta">14K followers · NU-Q student</div>
+                <div class="influencer-detail">
+                  Niche, intimate engagement and authentic student voice — perfect for showing the campaign from the inside.
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="get-involved">
+        <div class="section-kicker">Take Action</div>
+        <div class="section-header">
+          <h2 class="section-title">Wear Your Values</h2>
+          <p class="section-subtitle">
+            Unravel is not asking you to stop buying clothes overnight. It’s inviting you to start with what
+            you already have — and to join a campus movement where fashion carries both style and responsibility.
+          </p>
+        </div>
+
+        <div class="cta-section">
+          <div>
+            <h3 class="cta-title">Let’s act today for a greener tomorrow.</h3>
+            <p class="cta-subtitle">
+              Together, we can make sustainability feel less like sacrifice and more like self-expression.
+              Join the challenge, show up to an activation, or start with one outfit you already own.
+            </p>
+            <div class="cta-actions">
+              <button class="btn-pill" onclick="scrollToId('activations')">
+                <span class="icon">✶</span> Explore all activations
+              </button>
+              <button class="btn-pill secondary">
+                I promise to re-wear before I re-buy
+              </button>
+            </div>
+
+            <div class="cta-quicklist" style="margin-top:12px;">
+              <span>Swap one fast-fashion impulse buy for a re-styled outfit.</span>
+              <span>Join the #RewearChallenge: 1 item, 3 outfits, tag 3 friends.</span>
+              <span>Support a local or sustainable brand when you can.</span>
+            </div>
+          </div>
+
+          <div class="cta-right">
+            <h4>How to stay connected</h4>
+            <p>
+              Scan the QR on campus posters or follow our Instagram to see event dates, styling prompts, and
+              stories from students who are already rethinking what they wear.
+            </p>
+            <p style="margin-top:6px;">
+              Questions or collabs? Reach out to the Unravel team at
+              <strong>unravel.nuq@campus.example</strong>.
+            </p>
+            <div class="cta-hashtags">
+              <span>#UnravelNUQ</span>
+              <span>#WearYourValues</span>
+              <span>#SustainableFashionQatar</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <strong>Unravel · NU-Q</strong><br />
+        Environmental Sustainability Campaign · November 2025
+      </div>
+      <div>
+        Designed by students of NU-Q & Education City · Content for educational use.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      window.scrollTo({
+        top: el.offsetTop - 72,
+        behavior: "smooth"
+      });
+    }
+
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (navToggle && navLinks) {
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("is-open");
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("is-open");
+        });
+      });
+    }
+
+    const dataCards = document.querySelectorAll(".data-card");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const card = entry.target;
+              const percent = parseInt(card.getAttribute("data-bar"), 10) || 0;
+              const fill = card.querySelector(".bar-fill");
+              if (fill) {
+                fill.style.transition = "width 0.8s ease-out";
+                fill.style.width = percent + "%";
+              }
+              observer.unobserve(card);
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+
+      dataCards.forEach((card) => observer.observe(card));
+    } else {
+      dataCards.forEach((card) => {
+        const percent = parseInt(card.getAttribute("data-bar"), 10) || 0;
+        const fill = card.querySelector(".bar-fill");
+        if (fill) {
+          fill.style.width = percent + "%";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
